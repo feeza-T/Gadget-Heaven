@@ -1,0 +1,173 @@
+[
+    {
+      "product_id": "P001",
+      "product_title": "Apple iPhone 14 Pro",
+      "product_image": "https://example.com/iphone14pro.jpg",
+      "category": "Smartphone",
+      "price": 1099.99,
+      "description": "Apple iPhone 14 Pro with 6.1-inch Super Retina XDR display and A16 Bionic chip.",
+      "Specification": [
+        "6.1-inch OLED display",
+        "A16 Bionic chip",
+        "48MP triple-camera system",
+        "iOS 16",
+        "5G connectivity"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P002",
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "product_image": "https://example.com/s23ultra.jpg",
+      "category": "Smartphone",
+      "price": 1199.99,
+      "description": "Samsung Galaxy S23 Ultra with S Pen, 200MP camera, and powerful Snapdragon 8 Gen 2 chip.",
+      "Specification": [
+        "6.8-inch Dynamic AMOLED 2X display",
+        "Snapdragon 8 Gen 2",
+        "200MP quad-camera system",
+        "S Pen support",
+        "5000mAh battery"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P003",
+      "product_title": "MacBook Pro 16-inch (M2 Pro)",
+      "product_image": "https://example.com/macbookpro.jpg",
+      "category": "Laptop",
+      "price": 2499.99,
+      "description": "Apple MacBook Pro 16-inch powered by M2 Pro chip with Liquid Retina XDR display.",
+      "Specification": [
+        "16-inch Liquid Retina XDR display",
+        "Apple M2 Pro chip",
+        "16GB RAM, 512GB SSD",
+        "macOS Ventura",
+        "MagSafe 3 charging"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "P004",
+      "product_title": "Dell XPS 15",
+      "product_image": "https://example.com/dellxps15.jpg",
+      "category": "Laptop",
+      "price": 1899.99,
+      "description": "Dell XPS 15 with 12th Gen Intel Core i7 processor and NVIDIA RTX 3050 Ti GPU.",
+      "Specification": [
+        "15.6-inch OLED display",
+        "Intel Core i7 12th Gen",
+        "NVIDIA RTX 3050 Ti",
+        "16GB RAM, 512GB SSD",
+        "Windows 11"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P005",
+      "product_title": "Apple Watch Series 8",
+      "product_image": "https://example.com/applewatch8.jpg",
+      "category": "Smartwatch",
+      "price": 399.99,
+      "description": "Apple Watch Series 8 with advanced health tracking and Always-On Retina display.",
+      "Specification": [
+        "45mm Retina display",
+        "Blood Oxygen & ECG app",
+        "Crash Detection",
+        "watchOS 9",
+        "Water resistant"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "P006",
+      "product_title": "Samsung Galaxy Watch 5",
+      "product_image": "https://example.com/galaxywatch5.jpg",
+      "category": "Smartwatch",
+      "price": 349.99,
+      "description": "Samsung Galaxy Watch 5 with advanced health monitoring and long battery life.",
+      "Specification": [
+        "1.4-inch Super AMOLED display",
+        "Wear OS by Samsung",
+        "Heart rate & SpO2 monitoring",
+        "Sleep tracking",
+        "5ATM water resistance"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "P007",
+      "product_title": "Anker PowerCore 20000mAh",
+      "product_image": "https://example.com/ankerpowerbank.jpg",
+      "category": "Power Bank",
+      "price": 49.99,
+      "description": "Anker PowerCore 20000mAh high-capacity power bank with fast charging support.",
+      "Specification": [
+        "20000mAh battery capacity",
+        "Dual USB-A output",
+        "PowerIQ & VoltageBoost",
+        "USB-C input",
+        "Lightweight design"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P008",
+      "product_title": "Belkin 3-in-1 Wireless Charger",
+      "product_image": "https://example.com/belkincharger.jpg",
+      "category": "Charger",
+      "price": 99.99,
+      "description": "Belkin 3-in-1 wireless charger for iPhone, Apple Watch, and AirPods.",
+      "Specification": [
+        "15W fast wireless charging",
+        "Supports iPhone & Android",
+        "Apple Watch stand",
+        "Qi-certified",
+        "Compact design"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "P009",
+      "product_title": "Logitech MX Master 3S",
+      "product_image": "https://example.com/mxmaster3s.jpg",
+      "category": "Accessories",
+      "price": 99.99,
+      "description": "Logitech MX Master 3S wireless mouse with ultra-fast scrolling and ergonomic design.",
+      "Specification": [
+        "Silent click buttons",
+        "MagSpeed scrolling",
+        "Ergonomic design",
+        "USB-C charging",
+        "Multi-device support"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "P010",
+      "product_title": "Razer BlackShark V2 Pro",
+      "product_image": "https://example.com/razerheadset.jpg",
+      "category": "Accessories",
+      "price": 179.99,
+      "description": "Razer BlackShark V2 Pro wireless gaming headset with THX Spatial Audio.",
+      "Specification": [
+        "THX Spatial Audio",
+        "50mm Titanium drivers",
+        "Detachable HyperClear mic",
+        "Wireless & Bluetooth modes",
+        "Comfortable ear cushions"
+      ],
+      "availability": true,
+      "rating": 4.8
+    }
+  ]
+  
