@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Gadget = ({ gadget }) => {
-    const { product_title, product_image, price } = gadget;
+    const { product_title, product_image, price,product_id } = gadget;
 
     return (
-        <div className="w-full">
+        <Link to={`gadgets/${product_id}`}>
+            <div className="w-full">
             <div className="bg-white shadow-md rounded-lg p-4 w-full max-w-[300px] mx-auto h-full flex flex-col justify-between">
                 {/* Image Section */}
                 <figure className="bg-purple-200 py-4 rounded-lg flex justify-center">
@@ -16,13 +19,14 @@ const Gadget = ({ gadget }) => {
                     
                     {/* Button Section */}
                     <div className="flex justify-end mt-auto">
-                        <button className="px-4 py-2 text-[#9538E2] font-bold border hover:bg-blue-600 rounded-md transition">
+                        <button className="px-4 py-2 text-[#9538E2] font-bold border hover:bg-purple-600 hover:text-white rounded-md transition">
                             View Details
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+        </Link>
     );
 };
 

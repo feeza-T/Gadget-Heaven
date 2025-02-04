@@ -5,11 +5,8 @@ import Navbar from "../navbar/Navbar";
 
 const Root = () => {
     return (
-<<<<<<< HEAD
-        <div>
-=======
         <div className="max-w-6xl mx-auto">
->>>>>>> recovered-changes
+
           <Navbar></Navbar>
           <Outlet></Outlet>
           <Footer></Footer>
