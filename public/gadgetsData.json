@@ -2,7 +2,7 @@
     {
       "product_id": "P001",
       "product_title": "Apple iPhone 14 Pro",
-      "product_image": "https://example.com/iphone14pro.jpg",
+      "product_image": "https://i.ibb.co.com/JRqYqhvQ/iphn1.png",
       "category": "Smartphone",
       "price": 1099.99,
       "description": "Apple iPhone 14 Pro with 6.1-inch Super Retina XDR display and A16 Bionic chip.",
@@ -19,7 +19,7 @@
     {
       "product_id": "P002",
       "product_title": "Samsung Galaxy S23 Ultra",
-      "product_image": "https://example.com/s23ultra.jpg",
+      "product_image": "https://i.ibb.co.com/mVLcrSYJ/sam.jpg",
       "category": "Smartphone",
       "price": 1199.99,
       "description": "Samsung Galaxy S23 Ultra with S Pen, 200MP camera, and powerful Snapdragon 8 Gen 2 chip.",
@@ -36,7 +36,7 @@
     {
       "product_id": "P003",
       "product_title": "MacBook Pro 16-inch (M2 Pro)",
-      "product_image": "https://example.com/macbookpro.jpg",
+      "product_image": "https://i.ibb.co.com/TDWr6WjX/mac.jpg",
       "category": "Laptop",
       "price": 2499.99,
       "description": "Apple MacBook Pro 16-inch powered by M2 Pro chip with Liquid Retina XDR display.",
@@ -53,7 +53,7 @@
     {
       "product_id": "P004",
       "product_title": "Dell XPS 15",
-      "product_image": "https://example.com/dellxps15.jpg",
+      "product_image": "https://i.ibb.co.com/zTdWq3rC/dell.jpg",
       "category": "Laptop",
       "price": 1899.99,
       "description": "Dell XPS 15 with 12th Gen Intel Core i7 processor and NVIDIA RTX 3050 Ti GPU.",
@@ -70,7 +70,7 @@
     {
       "product_id": "P005",
       "product_title": "Apple Watch Series 8",
-      "product_image": "https://example.com/applewatch8.jpg",
+      "product_image": "https://i.ibb.co.com/67Nnf5My/applewatch.jpg",
       "category": "Smartwatch",
       "price": 399.99,
       "description": "Apple Watch Series 8 with advanced health tracking and Always-On Retina display.",
@@ -87,7 +87,7 @@
     {
       "product_id": "P006",
       "product_title": "Samsung Galaxy Watch 5",
-      "product_image": "https://example.com/galaxywatch5.jpg",
+      "product_image": "https://i.ibb.co.com/hG3GcHf/samwatch.jpg",
       "category": "Smartwatch",
       "price": 349.99,
       "description": "Samsung Galaxy Watch 5 with advanced health monitoring and long battery life.",
@@ -104,7 +104,7 @@
     {
       "product_id": "P007",
       "product_title": "Anker PowerCore 20000mAh",
-      "product_image": "https://example.com/ankerpowerbank.jpg",
+      "product_image": "https://i.ibb.co.com/GQSF6z4Q/power.jpg",
       "category": "Power Bank",
       "price": 49.99,
       "description": "Anker PowerCore 20000mAh high-capacity power bank with fast charging support.",
@@ -121,7 +121,7 @@
     {
       "product_id": "P008",
       "product_title": "Belkin 3-in-1 Wireless Charger",
-      "product_image": "https://example.com/belkincharger.jpg",
+      "product_image": "https://i.ibb.co.com/7xpQN7JK/belkincharger.jpg",
       "category": "Charger",
       "price": 99.99,
       "description": "Belkin 3-in-1 wireless charger for iPhone, Apple Watch, and AirPods.",
@@ -138,7 +138,7 @@
     {
       "product_id": "P009",
       "product_title": "Logitech MX Master 3S",
-      "product_image": "https://example.com/mxmaster3s.jpg",
+      "product_image": "https://i.ibb.co.com/5gPHBpwy/img9.jpg",
       "category": "Accessories",
       "price": 99.99,
       "description": "Logitech MX Master 3S wireless mouse with ultra-fast scrolling and ergonomic design.",
@@ -155,7 +155,7 @@
     {
       "product_id": "P010",
       "product_title": "Razer BlackShark V2 Pro",
-      "product_image": "https://example.com/razerheadset.jpg",
+      "product_image": "https://i.ibb.co.com/8L7Sj51B/img10.jpg",
       "category": "Accessories",
       "price": 179.99,
       "description": "Razer BlackShark V2 Pro wireless gaming headset with THX Spatial Audio.",
