@@ -12,6 +12,7 @@ import Home from './components/Home/Home';
 import Dashboard from './components/dashBoard/Dashboard';
 import Statistics from './components/statistics/Statistics';
 import GadgetDetail from './components/gadgetDetails/GadgetDetail';
+import AddToCart from './components/addToCart/AddToCart';
 
 
 const router = createBrowserRouter([
@@ -29,14 +30,15 @@ const router = createBrowserRouter([
         element:<GadgetDetail></GadgetDetail>,
         loader:()=> fetch('/gadgetsData.json')
       },
-      // {
-      //   path:"addtocart",
-      //   element<AddToCart>
+      {
+        path:"addtocart",
+        element: <AddToCart></AddToCart>
 
-      // },
+      },
       {
         path:"dashboard",
-        element:<Dashboard></Dashboard>
+        element:<Dashboard></Dashboard>,
+        loader: ()=> fetch('/gadgetsData.json')
       },
       {
         path:"statistics",

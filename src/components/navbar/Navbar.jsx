@@ -6,7 +6,7 @@ const Navbar = () => {
     const isGadgetDetailPage = location.pathname.startsWith("/gadgets/");
 
     return (
-        <div className={`navbar w-full shadow-sm ${isGadgetDetailPage ? "bg-purple-600 text-white" : "bg-purple-600 text-white rounded-t-3xl"}`}>
+        <div className={`navbar w-full shadow-sm ${isGadgetDetailPage ? "bg-white text-black" : "bg-purple-600 text-white rounded-t-3xl"}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

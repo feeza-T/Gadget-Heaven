@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaShoppingCart, FaHeart, FaStar } from "react-icons/fa";
-import { addToStoredCartList } from "../utility/addToCart";
+import { addToStoredCartList, addToStoredWishList } from "../utility/addToCart";
 
 const GadgetDetail = () => {
     const { product_id } = useParams();
@@ -14,11 +14,18 @@ const GadgetDetail = () => {
 
     const { product_image, product_title, price, availability, description, Specification, rating } = gadget;
 
-    const handleAddtoCart = (id)=>{
-         
-        addToStoredCartList(id);
-
-    }
+    const handleAddtoCart = (id) => {
+        console.log(`Adding to Cart: ${id}`);  // ✅ Debugging log
+        addToStoredCartList(parseInt(id));
+        alert("Added to Cart!");
+    };
+    
+    const handleWishList = (id) => {
+        console.log(`Adding to Wishlist: ${id}`);  // ✅ Debugging log
+        addToStoredWishList(parseInt(id));
+        alert("Added to Wishlist!");
+    };
+    
 
     return (
         <div className="hero bg-white min-h-screen p-6 -mt-45 relative rounded-4xl">
@@ -60,7 +67,8 @@ const GadgetDetail = () => {
                         className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition">
                             <FaShoppingCart /> Add to Cart
                         </button>
-                        <button className="flex items-center gap-2 text-purple-500 border border-purple-500 px-5 py-2 rounded-lg font-medium hover:bg-purple-500 hover:text-white transition">
+                        <button onClick={()=> handleWishList(product_id)}
+                        className="flex items-center gap-2 text-purple-500 border border-purple-500 px-5 py-2 rounded-lg font-medium hover:bg-purple-500 hover:text-white transition">
                             <FaHeart />
                         </button>
                     </div>
