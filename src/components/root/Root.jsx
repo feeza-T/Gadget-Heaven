@@ -1,15 +1,34 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 
-
 const Root = () => {
-    return (
-        <div className="max-w-6xl mx-auto">
+    const location = useLocation();
+  
+    const isGadgetDetailPage = location.pathname.startsWith("/gadgets/");
 
-          <Navbar></Navbar>
-          <Outlet></Outlet>
-          <Footer></Footer>
+    return (
+        <div>
+            <div className={`${isGadgetDetailPage ? "w-full" : "max-w-6xl mx-auto "}`}>
+                <Navbar />
+            </div>
+               {/* Banner Section: Only on Gadget Detail Page */}
+               {isGadgetDetailPage && (
+                <div className="bg-purple-600 text-white text-center py-10 pb-50 relative">
+                    <h1 className="text-4xl font-bold">Product Details</h1>
+                    <p className="text-lg mt-2 max-w-3xl mx-auto">
+                        Explore the latest gadgets that will take your experience to the next level. 
+                        From smart devices to the coolest accessories, we have it all!
+                    </p>
+                </div>
+            )}
+
+
+            {/* Keep Outlet and Footer Centered */}
+            <div className="max-w-6xl mx-auto bg-white">
+                <Outlet />
+                <Footer />
+            </div>
         </div>
     );
 };

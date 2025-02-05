@@ -29,6 +29,11 @@ const router = createBrowserRouter([
         element:<GadgetDetail></GadgetDetail>,
         loader:()=> fetch('/gadgetsData.json')
       },
+      // {
+      //   path:"addtocart",
+      //   element<AddToCart>
+
+      // },
       {
         path:"dashboard",
         element:<Dashboard></Dashboard>

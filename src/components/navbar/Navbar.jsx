@@ -3,11 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
     const location = useLocation();
     
-    // Check if the current page is a gadget detail page
     const isGadgetDetailPage = location.pathname.startsWith("/gadgets/");
 
     return (
-        <div className={`navbar w-full shadow-sm ${isGadgetDetailPage ? "bg-purple-600 text-white" : "bg-base-100"}`}>
+        <div className={`navbar w-full shadow-sm ${isGadgetDetailPage ? "bg-purple-600 text-white" : "bg-purple-600 text-white rounded-t-3xl"}`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

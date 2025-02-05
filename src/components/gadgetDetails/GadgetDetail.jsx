@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaShoppingCart, FaHeart, FaStar } from "react-icons/fa";
+import { addToStoredCartList } from "../utility/addToCart";
 
 const GadgetDetail = () => {
     const { product_id } = useParams();
@@ -13,12 +14,18 @@ const GadgetDetail = () => {
 
     const { product_image, product_title, price, availability, description, Specification, rating } = gadget;
 
+    const handleAddtoCart = (id)=>{
+         
+        addToStoredCartList(id);
+
+    }
+
     return (
-        <div className="hero bg-white min-h-screen p-6 ">
+        <div className="hero bg-white min-h-screen p-6 -mt-45 relative rounded-4xl">
             <div className="hero-content flex-col lg:flex-row gap-10">
                 
                 {/* Left: Product Image */}
-                <img src={product_image} className="max-w-sm rounded-lg shadow-2xl" alt={product_title} />
+                <img src={product_image} className="max-w-sm rounded-lg shadow-2xl bg-purple-200" alt={product_title} />
 
                 {/* Right: Product Details */}
                 <div className="max-w-lg">
@@ -27,11 +34,7 @@ const GadgetDetail = () => {
                     <p className={`mt-2 font-medium ${availability ? "text-green-600" : "text-red-500"}`}>
                         {availability ? "In Stock ✅" : "Out of Stock ❌"}
                     </p>
-
-                    {/* Description */}
                     <p className="py-4 text-gray-700">{description}</p>
-
-                    {/* Specifications List */}
                     <div className="mt-4">
                         <h3 className="text-lg font-semibold text-black">Specifications:</h3>
                         <ol className="list-decimal pl-6 text-gray-800">
@@ -40,8 +43,6 @@ const GadgetDetail = () => {
                             ))}
                         </ol>
                     </div>
-
-                    {/* Rating with Stars */}
                     <div className="mt-4 flex items-center">
                         <span className="text-lg font-semibold text-black">Rating:</span>
                         <span className="ml-2 text-yellow-500 flex items-center">
@@ -55,7 +56,8 @@ const GadgetDetail = () => {
 
                     {/* Add to Cart and Wishlist Buttons */}
                     <div className="mt-6 flex gap-4">
-                        <button className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition">
+                        <button onClick={()=> handleAddtoCart(product_id)}
+                        className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition">
                             <FaShoppingCart /> Add to Cart
                         </button>
                         <button className="flex items-center gap-2 text-purple-500 border border-purple-500 px-5 py-2 rounded-lg font-medium hover:bg-purple-500 hover:text-white transition">
