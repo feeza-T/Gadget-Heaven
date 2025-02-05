@@ -15,14 +15,26 @@ const GadgetDetail = () => {
     const { product_image, product_title, price, availability, description, Specification, rating } = gadget;
 
     const handleAddtoCart = (id) => {
-        console.log(`Adding to Cart: ${id}`);  // ✅ Debugging log
-        addToStoredCartList(parseInt(id));
+        if (!id) {
+            console.error("Invalid product ID:", id);
+            return;
+        }
+    
+        const validId = String(id);  // Keep as a string
+        console.log(`Adding to Cart: ${validId}`);  
+        addToStoredCartList(validId);
         alert("Added to Cart!");
     };
     
     const handleWishList = (id) => {
-        console.log(`Adding to Wishlist: ${id}`);  // ✅ Debugging log
-        addToStoredWishList(parseInt(id));
+        if (!id) {
+            console.error("Invalid product ID:", id);
+            return;
+        }
+    
+        const validId = String(id);  // Keep as a string
+        console.log(`Adding to Wishlist: ${validId}`);  
+        addToStoredWishList(validId);
         alert("Added to Wishlist!");
     };
     

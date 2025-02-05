@@ -1,21 +1,35 @@
-const getStoredCartList = ()=>{
-    const storedListStr = localStorage.getItem('add-list');
-    if(storedListStr) {
-        const storedList = JSON.parse(storedListStr);
-        return storedList;
+const getStoredCartList = () => {
+    const storedListStr = localStorage.getItem("add-list");
+    if (storedListStr) {
+        try {
+            const storedList = JSON.parse(storedListStr);
+            if (Array.isArray(storedList)) {
+                return storedList.filter(id => id !== null && id !== "NaN" && id.trim() !== ""); // Remove invalid values
+            }
+        } catch (error) {
+            console.error("Error parsing localStorage:", error);
+        }
     }
-    else{
-        return [];
+    return []; // Always return an array
+};
+
+
+const addToStoredCartList = (id) => {
+    if (!id || typeof id !== "string" || id.trim() === "") { 
+        console.error("Invalid product ID:", id);
+        return;
     }
 
-}
+    let storedList = getStoredCartList(); 
+    if (!storedList.includes(id)) {  
+        storedList.push(id);
+        localStorage.setItem("add-list", JSON.stringify(storedList));
+        console.log("Updated localStorage:", storedList);
+    } else {
+        console.log(id, " already added to cart.");
+    }
+};
 
-const addToStoredCartList = (id) =>{
-    const storedList = getStoredCartList();
-    storedList.push(id);
-    const storedListStr = JSON.stringify(storedList);
-    localStorage.setItem('add-list',storedListStr);
-}
 
 const removeFromStoredCartList = (id) => {
     let storedList = getStoredCartList();

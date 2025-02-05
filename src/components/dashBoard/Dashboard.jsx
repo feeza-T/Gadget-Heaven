@@ -11,16 +11,16 @@ const Dashboard = () => {
   const allCarts = useLoaderData();
 
   useEffect(() => {
-    if (!allCarts || allCarts.length === 0) return;
-
-    const storedCartList = (getStoredCartList() || []).filter(id => id !== null);
+    const storedCartList = getStoredCartList() || [];
     console.log("Stored Cart List (Filtered):", storedCartList);
 
-    const cartList = allCarts.filter(cart => storedCartList.includes(cart.product_id));
+    if (!allCarts || allCarts.length === 0) return;
 
+    const cartList = allCarts.filter(cart => storedCartList.includes(cart.product_id));
     console.log("Filtered Cart List:", cartList);
+    
     setAddList(cartList);
-  }, [allCarts]);
+}, [allCarts]);  // ✅ Remove `addList` from dependencies
 
   // Function to remove item from cart
   const handleRemove = (product_id) => {
