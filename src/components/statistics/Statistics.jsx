@@ -26,11 +26,11 @@ const Statistics = () => {
         <div className="bg-purple-600 text-white text-center py-10 pb-30">
         <h1 className="text-4xl font-bold">Statistics</h1>
         <p className="mt-2 text-lg">
-        Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!
+        Explore the latest gadgets that will take your experience to <br></br>the next level. From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
 
-      <h1 className="text-center text-black text-2xl font-semibold mb-8">Statistics</h1>
+      <h1 className="text-center text-black text-2xl font-semibold m-8">Statistics</h1>
       
       {/* Bar Chart for Product Price */}
       <ResponsiveContainer width="100%" height={400}>

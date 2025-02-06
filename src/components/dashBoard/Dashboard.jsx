@@ -43,7 +43,7 @@ const Dashboard = () => {
     if (addedItem) {
       const updatedCart = [...addList, addedItem];
       setAddList(updatedCart);
-      setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0)); // Update total price
+      setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0)); 
     }
   };
 
@@ -57,9 +57,6 @@ const Dashboard = () => {
           From smart devices to the coolest accessories, we have it all!
         </p>
       </div>
-
-      {/* Middle Section with Cart/Wishlist Info */}
-     
 
       {/* Tabs Section */}
       <Tabs selectedIndex={activeTab} onSelect={(index) => setActiveTab(index)}>
