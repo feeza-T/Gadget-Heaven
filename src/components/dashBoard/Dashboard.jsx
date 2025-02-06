@@ -9,7 +9,8 @@ const Dashboard = () => {
   const [addList, setAddList] = useState([]);
   const [wishList, setWishList] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
-  const [activeTab, setActiveTab] = useState(0); // Track active tab
+  const [activeTab, setActiveTab] = useState(0);
+  const [isSorted, setIsSorted] = useState(false); 
   const allCarts = useLoaderData();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const Dashboard = () => {
 
     setAddList(cartList);
     setWishList(wishListItems);
-    setTotalPrice(cartList.reduce((acc, item) => acc + item.price, 0)); // Calculate total price
+    setTotalPrice(cartList.reduce((acc, item) => acc + item.price, 0));
   }, [allCarts]);
 
   // Remove item from cart
@@ -31,7 +32,7 @@ const Dashboard = () => {
     removeFromStoredCartList(product_id);
     const updatedCart = addList.filter(item => item.product_id !== product_id);
     setAddList(updatedCart);
-    setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0)); // Update total price
+    setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0));
   };
 
   // Add item to cart from wishlist
@@ -43,13 +44,32 @@ const Dashboard = () => {
     if (addedItem) {
       const updatedCart = [...addList, addedItem];
       setAddList(updatedCart);
-      setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0)); 
+      setTotalPrice(updatedCart.reduce((acc, item) => acc + item.price, 0));
     }
   };
 
+  const handleSortByPrice = () => {
+    const sortedList = [...addList].sort((a, b) => b.price - a.price);
+    setAddList(sortedList);
+    setIsSorted(true);
+  };
+  const handleCloseModal = () => {
+    // Reset cart and wishlist
+    setAddList([]);
+    setWishList([]);
+    setTotalPrice(0);
+  
+    // Clear local storage
+    localStorage.removeItem('cartList'); 
+    localStorage.removeItem('wishList');
+  
+    // Update state to reflect in navbar
+    document.getElementById('my_modal_3').close();
+  };
+  
+
   return (
     <div>
-      {/* Banner Section */}
       <div className="bg-purple-600 text-white text-center py-10 pb-30">
         <h1 className="text-4xl font-bold">Dashboard</h1>
         <p className="mt-2 text-lg">
@@ -60,17 +80,14 @@ const Dashboard = () => {
 
       {/* Tabs Section */}
       <Tabs selectedIndex={activeTab} onSelect={(index) => setActiveTab(index)}>
-        <TabList className="flex justify-center gap-5 -mt-20 mb-20 ">
-        <Tab
-  className={`px-6 py-2 rounded-lg font-bold cursor-pointer ${
-    activeTab === 0
-      ? "bg-purple-600 text-white"
-      : "bg-white text-purple-600 border border-purple-600"
-  }`}
->
-  Cart
-</Tab>
-
+        <TabList className="flex justify-center gap-5 -mt-20 mb-20">
+          <Tab
+            className={`px-6 py-2 rounded-lg font-bold cursor-pointer ${
+              activeTab === 0 ? "bg-purple-600 text-white" : "bg-white text-purple-600 border border-purple-600"
+            }`}
+          >
+            Cart
+          </Tab>
           <Tab
             className={`px-6 py-2 rounded-lg font-bold cursor-pointer ${
               activeTab === 1 ? "bg-purple-600 text-white" : "bg-white text-purple-600 border border-purple-600"
@@ -79,19 +96,46 @@ const Dashboard = () => {
             Wishlist
           </Tab>
         </TabList>
-        
 
         {/* Cart Panel */}
         <TabPanel>
-        <div className="flex justify-center items-center my-5 gap-10">
-          <h2 className="text-black text-xl text-center mb-4">Your Cart Items: {addList.length}</h2>
-        <div className="bg-white shadow-md px-6 py-3 rounded-lg">
-          <h2 className="text-xl font-bold text-black">Total Price: ${totalPrice}</h2>
-        </div>
-        <button className="bg-purple-600 text-white px-6 py-2 rounded-lg font-bold shadow-md">
-          Purchase
-        </button>
-      </div>
+          <div className="flex justify-center items-center my-5 gap-10">
+            <h2 className="text-black text-xl text-center mb-4">Your Cart Items: {addList.length}</h2>
+            <div className="rounded-lg">
+              <button className="btn bg-white p-3 text-black">Total Price: ${totalPrice}</button>
+            </div>
+            <button 
+              className="btn bg-white text-black" 
+              onClick={handleSortByPrice}
+            >
+              Sort By Price
+            </button>
+           {/* You can open the modal using document.getElementById('ID').showModal() method */}
+           <button 
+  className="btn bg-purple-600 border-none" 
+  onClick={() => document.getElementById('my_modal_3').showModal()}
+>
+  Purchase
+</button>
+
+<dialog id="my_modal_3" className="modal">
+  <div className="modal-box bg-white text-black">
+    <button 
+      className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" 
+      onClick={() => handleCloseModal()}
+    >
+      ✕
+    </button>
+    <div className="text-center">
+      <h3 className="font-bold text-lg">Payment Successfully</h3>
+      <p className="py-4">Thanks for purchasing.</p>
+      <p>Total: ${totalPrice}</p>
+    </div>
+  </div>
+</dialog>
+
+          </div>
+          
           {addList.length > 0 ? (
             <div className="space-y-2">
               {addList.map((gadget) => (

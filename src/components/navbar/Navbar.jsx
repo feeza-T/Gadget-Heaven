@@ -1,6 +1,6 @@
 import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
-import PropTypes from "prop-types"; // ✅ Import PropTypes
+import PropTypes from "prop-types";
 
 const Navbar = ({ cartList, wishList }) => {
   const location = useLocation();
@@ -8,7 +8,11 @@ const Navbar = ({ cartList, wishList }) => {
   const isWhiteNavbar =
     location.pathname.startsWith("/gadgets/") ||
     location.pathname.startsWith("/dashboard") ||
+    location.pathname.startsWith("/aboutus") ||
     location.pathname.startsWith("/statistics");
+
+  // Function to check if the link is active
+  const isActive = (path) => location.pathname === path ? "bg-white text-purple-600 font-bold rounded-md" : "";
 
   return (
     <div
@@ -34,13 +38,16 @@ const Navbar = ({ cartList, wishList }) => {
             className="menu menu-sm dropdown-content bg-white text-black rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/" className={isActive("/")}>Home</Link>
             </li>
             <li>
-              <Link to="/statistics">Statistics</Link>
+              <Link to="/statistics" className={isActive("/statistics")}>Statistics</Link>
             </li>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard" className={isActive("/dashboard")}>Dashboard</Link>
+            </li>
+            <li>
+              <Link to="/aboutus" className={isActive("/aboutus")}>About Us</Link>
             </li>
           </ul>
         </div>
@@ -50,27 +57,30 @@ const Navbar = ({ cartList, wishList }) => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 space-x-4">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className={`px-3 py-2 ${isActive("/")}`}>Home</Link>
           </li>
           <li>
-            <Link to="/statistics">Statistics</Link>
+            <Link to="/statistics" className={`px-3 py-2 ${isActive("/statistics")}`}>Statistics</Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/dashboard" className={`px-3 py-2 ${isActive("/dashboard")}`}>Dashboard</Link>
           </li>
+          <li>
+              <Link to="/aboutus" className={isActive("/aboutus")}>About Us</Link>
+            </li>
         </ul>
       </div>
 
       <div className="navbar-end flex items-center">
-        <Link to="/dashboard" className="mr-4">
+        <Link to="/dashboard" className="mr-4 relative flex items-center">
           <FaShoppingCart className="text-2xl" />
-          {cartList.length}
+          <span className="ml-1">{cartList.length}</span>
         </Link>
-        <Link to="/dashboard" className="mr-4">
+        <Link to="/dashboard" className="mr-4 relative flex items-center">
           <FaHeart className="text-2xl" />
-          {wishList.length}
+          <span className="ml-1">{wishList.length}</span>
         </Link>
       </div>
     </div>
