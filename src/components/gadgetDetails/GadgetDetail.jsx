@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaShoppingCart, FaHeart, FaStar } from "react-icons/fa";
 import { addToStoredCartList, addToStoredWishList } from "../utility/addToCart";
+import Swal from "sweetalert2";  // ✅ Import SweetAlert2
 
 const GadgetDetail = () => {
     const { product_id } = useParams();
@@ -19,30 +20,42 @@ const GadgetDetail = () => {
             console.error("Invalid product ID:", id);
             return;
         }
-    
-        const validId = String(id);  // Keep as a string
-        console.log(`Adding to Cart: ${validId}`);  
+
+        const validId = String(id);
         addToStoredCartList(validId);
-        alert("Added to Cart!");
+
+        // ✅ Show SweetAlert notification
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Added to Cart!",
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
-    
+
     const handleWishList = (id) => {
         if (!id) {
             console.error("Invalid product ID:", id);
             return;
         }
-    
-        const validId = String(id);  // Keep as a string
-        console.log(`Adding to Wishlist: ${validId}`);  
+
+        const validId = String(id);
         addToStoredWishList(validId);
-        alert("Added to Wishlist!");
+
+        // ✅ Show SweetAlert notification
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Added to Wishlist!",
+            showConfirmButton: false,
+            timer: 1500
+        });
     };
-    
 
     return (
         <div className="hero bg-white min-h-screen p-6 -mt-45 relative rounded-4xl">
             <div className="hero-content flex-col lg:flex-row gap-10">
-                
                 {/* Left: Product Image */}
                 <img src={product_image} className="max-w-sm rounded-lg shadow-2xl bg-purple-200" alt={product_title} />
 
@@ -75,13 +88,13 @@ const GadgetDetail = () => {
 
                     {/* Add to Cart and Wishlist Buttons */}
                     <div className="mt-6 flex gap-4">
-                        <button onClick={()=> handleAddtoCart(product_id)}
-                        className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition">
+                        <button onClick={() => handleAddtoCart(product_id)}
+                            className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-purple-700 transition">
                             <FaShoppingCart /> Add to Cart
                         </button>
-                        <button onClick={()=> handleWishList(product_id)}
-                        className="flex items-center gap-2 text-purple-500 border border-purple-500 px-5 py-2 rounded-lg font-medium hover:bg-purple-500 hover:text-white transition">
-                            <FaHeart />
+                        <button onClick={() => handleWishList(product_id)}
+                            className="flex items-center gap-2 text-purple-500 border border-purple-500 px-5 py-2 rounded-lg font-medium hover:bg-purple-500 hover:text-white transition">
+                            <FaHeart /> Add to Wishlist
                         </button>
                     </div>
                 </div>

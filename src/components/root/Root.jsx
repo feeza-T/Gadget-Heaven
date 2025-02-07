@@ -3,7 +3,6 @@ import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import { useState, useEffect } from "react";
 import { getStoredCartList, getStoredWishList } from "../utility/addToCart";
-import TitleUpdater from "../title/TitleUpdater";
 
 const Root = () => {
   const location = useLocation();
@@ -20,8 +19,7 @@ const Root = () => {
 
   return (
     <div>
-      <TitleUpdater />  {/* ✅ Ensure TitleUpdater is here */}
-      
+    
       <div className={`${isGadgetDetailPage ? "w-full" : "max-w-6xl mx-auto "}`}>
         <Navbar cartList={cartList} wishList={wishList} />
       </div>
