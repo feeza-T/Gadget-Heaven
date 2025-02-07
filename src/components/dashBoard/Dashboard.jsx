@@ -70,6 +70,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      
       <div className="bg-purple-600 text-white text-center py-10 pb-30">
         <h1 className="text-4xl font-bold">Dashboard</h1>
         <p className="mt-2 text-lg">

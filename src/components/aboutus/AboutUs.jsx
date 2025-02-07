@@ -1,6 +1,10 @@
+
+
 const AboutUs = () => {
     return (
+
       <div>
+      
         {/* Banner Section */}
         <div className="bg-purple-600 text-white text-center py-20">
           <h1 className="text-4xl font-bold">About Us</h1>
